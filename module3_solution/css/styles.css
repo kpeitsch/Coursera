@@ -7,6 +7,10 @@
   background-color: #8B0000;
 }
 
+.container {
+  margin: 0;
+}
+
 .navbar-brand {
   padding-top: 25px;
 }
