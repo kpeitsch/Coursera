@@ -7,10 +7,6 @@
   background-color: #8B0000;
 }
 
-.container {
-  margin: 0;
-}
-
 .navbar-brand {
   padding-top: 25px;
 }
@@ -48,13 +44,17 @@
 
 /** MAIN-CONTENT**/
 #main-content {
-  margin: 0 15px 0 15px;
+  margin: 0px 15px 0px 15px;
   padding: 0px;
 }
 #main-content-section {
   text-align: justify;
   background-color: #CCCCCC;
   padding: 10px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 /** MAIN-CONTENT-END **/
+
+.row {
+  margin: 0;
+}
