@@ -41,7 +41,7 @@ function NarrowItDownController(MenuSearchService) {
       console.log("Something went terribly wrong.");
     });
 
-    console.log("menu: " + menu);
+    console.log("menu: " + menu.found);
   };
 
   menu.removeItem = function (index) {
@@ -62,7 +62,7 @@ function MenuSearchService($http) {
       // process result and only keep items that match
       var foundItems = result.data;
 
-      console.log("result: " +  result);
+      console.log("result: " +  result.data);
       console.log("foundItems: " + foundItems);
 
       // for(var index=0; index < foundItems.length ; index++){
