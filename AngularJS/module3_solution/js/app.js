@@ -57,11 +57,10 @@ function MenuSearchService($http) {
   var service = this;
 
   service.getMatchedMenuItems = function (searchTerm) {
-    return $http(
-      url: "https://davids-restaurant.herokuapp.com/menu_items.json")
+    return $http({url: "https://davids-restaurant.herokuapp.com/menu_items.json"})
       .then(function (result) {
       // process result and only keep items that match
-      var foundItems = result.data;
+      var foundItems = result.data['menu_items'];
 
       console.log("result: " +  result.data);
       console.log("foundItems: " + foundItems);
