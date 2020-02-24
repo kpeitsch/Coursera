@@ -35,7 +35,7 @@ function NarrowItDownController(MenuSearchService) {
     });
   };
 
-  menu.onRemove = function (index) {
+  menu.removeItem = function (index) {
     menu.found.splice(index, 1);
   };
 }
