@@ -64,6 +64,7 @@ function MenuSearchService($http) {
 
       console.log("result: " +  result.data);
       console.log("foundItems: " + foundItems);
+      console.log("foundItems[0].name: " +foundItems[0].name);
 
       // for(var index=0; index < foundItems.length ; index++){
       //   if (foundItems[index] !== searchTerm){
