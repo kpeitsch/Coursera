@@ -32,18 +32,14 @@ function NarrowItDownController(MenuSearchService) {
   menu.listItems = function () {
     var promise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
 
-    console.log("promise: " + promise);
-
     promise.then(function (response) {
       menu.found = response;
-      console.log("menu2: " + menu.found);
-      console.log("menu3: " + response.data);
+      console.log("menu.found[0].name: " + menu.found[0].name);
     })
     .catch(function (error) {
       console.log("Something went terribly wrong.");
     });
 
-    console.log("menu: " + menu.found);
   };
 
   menu.removeItem = function (index) {
@@ -62,8 +58,6 @@ function MenuSearchService($http) {
       // process result and only keep items that match
       var foundItems = result.data['menu_items'];
 
-      console.log("result: " +  result.data);
-      console.log("foundItems: " + foundItems);
       console.log("foundItems[0].name: " +foundItems[0].name);
 
       // for(var index=0; index < foundItems.length ; index++){
