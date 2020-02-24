@@ -37,7 +37,7 @@ function NarrowItDownController(MenuSearchService) {
 
   menu.onRemove = function (index) {
     menu.found.splice(index, 1);
-  }
+  };
 }
 
 
@@ -53,7 +53,7 @@ function MenuSearchService($http) {
       // process result and only keep items that match
       var foundItems = result.data;
 
-      for(var index=0; i < foundItems.length ; index++){
+      for(var index=0; index < foundItems.length ; index++){
         if (foundItems[index] !== searchTerm){
           foundItems.splice(index,1);
         }
