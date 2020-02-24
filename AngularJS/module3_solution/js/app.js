@@ -53,11 +53,11 @@ function MenuSearchService($http) {
       // process result and only keep items that match
       var foundItems = result.data;
 
-      for(var index=0; index < foundItems.length ; index++){
-        if (foundItems[index] !== searchTerm){
-          foundItems.splice(index,1);
-        }
-      };
+      // for(var index=0; index < foundItems.length ; index++){
+      //   if (foundItems[index] !== searchTerm){
+      //     foundItems.splice(index,1);
+      //   }
+      // };
 
       // return processed items
       return foundItems;
