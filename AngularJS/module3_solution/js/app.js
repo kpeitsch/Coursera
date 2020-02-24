@@ -24,14 +24,16 @@ function NarrowItDownController(MenuSearchService) {
   var menu = this;
   menu.searchTerm = "";
 
-  var promise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
+  menu.listItems = function () {
+    var promise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
 
-  promise.then(function (response) {
-    menu.found = response.data;
-  })
-  .catch(function (error) {
-    console.log("Something went terribly wrong.");
-  });
+    promise.then(function (response) {
+      menu.found = response.data;
+    })
+    .catch(function (error) {
+      console.log("Something went terribly wrong.");
+    });
+  };
 
   menu.onRemove = function (index) {
     menu.found.splice(index, 1);
