@@ -38,6 +38,8 @@ function NarrowItDownController(MenuSearchService) {
     .catch(function (error) {
       console.log("Something went terribly wrong.");
     });
+
+    console.log(menu);
   };
 
   menu.removeItem = function (index) {
