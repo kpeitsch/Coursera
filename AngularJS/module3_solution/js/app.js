@@ -35,7 +35,7 @@ function NarrowItDownController(MenuSearchService) {
     console.log("promise: " + promise);
 
     promise.then(function (response) {
-      menu.found = response.data;
+      menu.found = response;
       console.log("menu2: " + menu.found);
       console.log("menu3: " + response.data);
     })
@@ -57,9 +57,8 @@ function MenuSearchService($http) {
   var service = this;
 
   service.getMatchedMenuItems = function (searchTerm) {
-    return $http({
-      method: "GET",
-      url: "https://davids-restaurant.herokuapp.com/menu_items.json"})
+    return $http(
+      url: "https://davids-restaurant.herokuapp.com/menu_items.json")
       .then(function (result) {
       // process result and only keep items that match
       var foundItems = result.data;
