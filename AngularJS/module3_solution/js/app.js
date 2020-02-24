@@ -12,7 +12,7 @@ function FoundItemsDirective() {
     scope: {
       foundItems: '<',
       onRemove: '&'
-    },
+    }
   };
 
   return ddo;
