@@ -62,7 +62,7 @@ function MenuSearchService($http) {
       // process result and only keep items that match
       var foundItems = result.data;
 
-      console.log("result: " +  result);s
+      console.log("result: " +  result);
       console.log("foundItems: " + foundItems);
 
       // for(var index=0; index < foundItems.length ; index++){
