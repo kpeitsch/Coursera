@@ -64,7 +64,7 @@ function MenuSearchService($http) {
 
 
         for(var index=0; index < foundItems.length ; index++){
-          if (foundItems[index].toLowerCase().indexOf(searchTerm.toLowerCase()) === -1){
+          if (foundItems[index].description.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1){
             foundItems.splice(index,1);
           }
         };
