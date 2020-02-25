@@ -58,13 +58,12 @@ function MenuSearchService($http) {
       var foundItems = [];
       if (searchTerm !== "")
       {
-        foundItems = result.data['menu_items'];
+        var tempfoundItems = result.data['menu_items'];
 
 
-        for(var index=0; index < foundItems.length ; index++){
-          if (foundItems[index].description.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1 ||
-              (foundItems[index].description === "" && foundItems[index].name.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1)){
-            foundItems.splice(index,1);
+        for(var index=0; index < tempfoundItems.length ; index++){
+          if (tempfoundItems[index].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1){
+            foundItems.push(tempfoundItems[index]);
           }
         };
       };
