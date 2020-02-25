@@ -60,11 +60,11 @@ function MenuSearchService($http) {
 
       console.log("foundItems[0].name: " +foundItems[0].name);
 
-      // for(var index=0; index < foundItems.length ; index++){
-      //   if (foundItems[index] !== searchTerm){
-      //     foundItems.splice(index,1);
-      //   }
-      // };
+      for(var index=0; index < foundItems.length ; index++){
+        if (foundItems[index].lowercase !== searchTerm.lowercase){
+        foundItems.splice(index,1);
+        }
+      };
 
       // return processed items
       return foundItems;
