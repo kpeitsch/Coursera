@@ -56,14 +56,18 @@ function MenuSearchService($http) {
     return $http({url: "https://davids-restaurant.herokuapp.com/menu_items.json"})
       .then(function (result) {
       // process result and only keep items that match
-      var foundItems = result.data['menu_items'];
+      var foundItems = [];
+      if (searchTerm !== "")
+      {
+        foundItems = result.data['menu_items'];
 
-      console.log("foundItems[0].name: " +foundItems[0].name);
+        console.log("foundItems[0].name: " +foundItems[0].name);
 
-      for(var index=0; index < foundItems.length ; index++){
-        if (foundItems[index].lowercase !== searchTerm.lowercase){
-        foundItems.splice(index,1);
-        }
+        for(var index=0; index < foundItems.length ; index++){
+          if (foundItems[index].toLowerCase().indexOf(searchTerm.toLowerCase()) === -1){
+            foundItems.splice(index,1);
+          }
+        };
       };
 
       // return processed items
