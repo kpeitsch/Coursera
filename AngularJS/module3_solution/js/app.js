@@ -37,7 +37,7 @@ function NarrowItDownController(MenuSearchService) {
       console.log("menu.found[0].name: " + menu.found[0].name);
     })
     .catch(function (error) {
-      console.log("Something went terribly wrong.");
+      console.log("Nothing found.");
     });
 
   };
@@ -57,7 +57,7 @@ function MenuSearchService($http) {
       .then(function (result) {
       // process result and only keep items that match
       var foundItems = [];
-      console.log(searchTerm);
+      console.log("searchTerm: " +searchTerm);
       if (searchTerm !== "")
       {
         foundItems = result.data['menu_items'];
