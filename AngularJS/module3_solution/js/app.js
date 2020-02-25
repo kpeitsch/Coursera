@@ -56,15 +56,14 @@ function MenuSearchService($http) {
       .then(function (result) {
       // process result and only keep items that match
       var foundItems = [];
-      console.log("searchTerm: " + searchTerm);
       if (searchTerm !== "")
       {
-        console.log("if-verzweigung");
         foundItems = result.data['menu_items'];
 
 
         for(var index=0; index < foundItems.length ; index++){
-          if (foundItems[index].description.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1){
+          if (foundItems[index].description.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1 ||
+              (foundItems[index].description === "" && foundItems[index].name.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1)){
             foundItems.splice(index,1);
           }
         };
