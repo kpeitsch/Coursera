@@ -57,6 +57,7 @@ function MenuSearchService($http) {
       .then(function (result) {
       // process result and only keep items that match
       var foundItems = [];
+      console.log(searchTerm);
       if (searchTerm !== "")
       {
         foundItems = result.data['menu_items'];
