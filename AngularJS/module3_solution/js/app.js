@@ -34,7 +34,6 @@ function NarrowItDownController(MenuSearchService) {
 
     promise.then(function (response) {
       menu.found = response;
-      console.log("menu.found[0].name: " + menu.found[0].name);
     })
     .catch(function (error) {
       console.log("Nothing found.");
@@ -57,12 +56,12 @@ function MenuSearchService($http) {
       .then(function (result) {
       // process result and only keep items that match
       var foundItems = [];
-      console.log("searchTerm: " +searchTerm);
+      console.log("searchTerm: " + searchTerm);
       if (searchTerm !== "")
       {
+        console.log("if-verzweigung");
         foundItems = result.data['menu_items'];
 
-        console.log("foundItems[0].name: " +foundItems[0].name);
 
         for(var index=0; index < foundItems.length ; index++){
           if (foundItems[index].toLowerCase().indexOf(searchTerm.toLowerCase()) === -1){
