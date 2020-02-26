@@ -19,13 +19,13 @@
       templateUrl: 'src/menu/templates/home.template.html'
     })
 
-    // catergories page
+    // categories page
     .state('categories', {
       url: '/categories',
-      templateUrl: 'src/menu/templates/catergories.template.html',
-      controller: 'CategoriesController as catergories',
+      templateUrl: 'src/menu/templates/categories.template.html',
+      controller: 'CategoriesController as categories',
       resolve: {
-        catergories: ['MenuDataService', function (MenuDataService) {
+        categories: ['MenuDataService', function (MenuDataService) {
           return MenuDataService.getAllCategories();
         }]
       }
