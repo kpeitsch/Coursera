@@ -9,6 +9,8 @@
     var service = this;
 
     service.getAllCategories = function () {
+      console.log("service.getAllCategories do http call");
+
       var response = $http({
         method: "GET",
         url: ("https://davids-restaurant.herokuapp.com/categories.json")
