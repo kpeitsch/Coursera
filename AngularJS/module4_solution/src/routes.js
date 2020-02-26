@@ -22,7 +22,7 @@
     // catergories page
     .state('categories', {
       url: '/categories',
-      templateUrl: 'src/shoppinglist/templates/catergories.template.html',
+      templateUrl: 'src/menu/templates/catergories.template.html',
       controller: 'CategoriesController as catergories',
       resolve: {
         catergories: ['MenuDataService', function (MenuDataService) {
