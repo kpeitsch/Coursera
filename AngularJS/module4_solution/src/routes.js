@@ -27,7 +27,19 @@
       resolve: {
         items: ['MenuDataService', function (MenuDataService) {
           var promise = MenuDataService.getAllCategories();
-          console.log("categories component got promise ", promise);
+          return promise;
+        }]
+      }
+    })
+
+    // items page
+    .state('items', {
+      url: '/items/{shortName}',
+      templateUrl: 'src/menu/templates/items.template.html',
+      controller: 'ItemsController as items',
+      resolve: {
+        catergoryItems: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
+          var promise = MenuDataService.getItemsForCategory($stateParams.shortName);
           return promise;
         }]
       }
