@@ -25,7 +25,7 @@
       templateUrl: 'src/menu/templates/categories.template.html',
       controller: 'CategoriesController as categories',
       resolve: {
-        categories: ['MenuDataService', function (MenuDataService) {
+        items: ['MenuDataService', function (MenuDataService) {
           var promise = MenuDataService.getAllCategories();
           console.log("categories component got promise ", promise);
           return promise;
