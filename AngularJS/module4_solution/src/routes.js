@@ -26,7 +26,9 @@
       controller: 'CategoriesController as categories',
       resolve: {
         categories: ['MenuDataService', function (MenuDataService) {
-          return MenuDataService.getAllCategories();
+          var promise = MenuDataService.getAllCategories();
+          console.log("categories component got promise ", promise);
+          return promise;
         }]
       }
     })
