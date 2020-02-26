@@ -20,8 +20,8 @@
     })
 
     // catergories page
-    .state('catergories', {
-      url: '/catergories',
+    .state('categories', {
+      url: '/categories',
       templateUrl: 'src/shoppinglist/templates/catergories.template.html',
       controller: 'CategoriesController as catergories',
       resolve: {
