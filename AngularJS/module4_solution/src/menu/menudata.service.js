@@ -18,7 +18,7 @@
     };
 
     service.getItemsForCategory = function (catergoryShortName) {
-      ar response = $http({
+      var response = $http({
         method: "GET",
         url: ("https://davids-restaurant.herokuapp.com/menu_items.json"),
         params: {
