@@ -4,7 +4,7 @@
   angular.module('Data')
   .component('categories', {
     templateUrl: 'src/menu/templates/categories.template.html',
-    binding: {
+    bindings: {
       categories: '<'
     }
   });
