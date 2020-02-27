@@ -35,10 +35,11 @@
     // items page
     .state('items', {
       url: '/items/{shortName}',
+      url: '/items/{shortName}',
       templateUrl: 'src/menu/templates/items.template.html',
       controller: 'ItemsController as categoryItems',
       resolve: {
-        catergoryItems: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
+        categoryItems: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
           var promise = MenuDataService.getItemsForCategory($stateParams.shortName);
           return promise;
         }]
