@@ -36,7 +36,7 @@
     .state('items', {
       url: '/items/{shortName}',
       templateUrl: 'src/menu/templates/items.template.html',
-      controller: 'ItemsController as categoryItems',
+      controller: 'ItemsController as items',
       resolve: {
         categoryItems: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
           var promise = MenuDataService.getItemsForCategory($stateParams.shortName);
