@@ -35,7 +35,6 @@
     // items page
     .state('items', {
       url: '/items/{shortName}',
-      url: '/items/{shortName}',
       templateUrl: 'src/menu/templates/items.template.html',
       controller: 'ItemsController as categoryItems',
       resolve: {
