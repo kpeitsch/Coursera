@@ -7,8 +7,8 @@ angular.module('MenuApp')
 
 ItemsController.$inject = ['categoryItems'];
 function ItemsController (categoryItems) {
-  var menu = this;
-  menu.items = categoryItems.data;
+  var itemDetail = this;
+  itemDetail.items = categoryItems.data;
 }
 
 })();
