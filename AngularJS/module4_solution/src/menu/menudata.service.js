@@ -18,7 +18,7 @@
     };
 
     service.getItemsForCategory = function (categoryShortName) {
-      console.log("http-call fuer shortname: " + categoryShortName),
+      console.log("http-call fuer shortname: " + categoryShortName);
       var response = $http({
         method: "GET",
         url: ("https://davids-restaurant.herokuapp.com/menu_items.json"),
