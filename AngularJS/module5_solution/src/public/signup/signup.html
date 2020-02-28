@@ -5,7 +5,6 @@
     <input type="text" name="firstname" placeholder="Firstname"
       ng-model="reg.user.firstname"
       required>
-      {{ reg.user.firstname }}
       <span
         ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
         Firstname must be given.
@@ -15,7 +14,6 @@
       <input type="text" name="lastname" placeholder="Lastname"
         ng-model="reg.user.lastname"
         required>
-        {{ reg.user.lastname }}
         <span
           ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
           Lastname must be given.
@@ -32,13 +30,14 @@
 
     <input type="text" name="phone" placeholder="Phone ###-###-####"
       ng-model="reg.user.phone"
-      pattern="(\d{3})-(\d{3})-(\d{4})">
+      pattern="(\d{3})-(\d{3})-(\d{4})"
+      required>
       <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
         Phone must be in the format ###-###-####.
       </span>
       <br>
 
-      <input type="text" name="favorite" placeholder="menu number of favorite dish (eg. A1)"
+      <input type="text" name="favorite" placeholder="favorite dish (eg. A1)"
         ng-model="reg.user.favorite">
         <br>
 
