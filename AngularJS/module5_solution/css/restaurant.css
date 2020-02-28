@@ -200,3 +200,17 @@ a[ui-sref="admin.auth"] {
   }
   /* End Header */
 }
+
+
+/***************** Sign up page ******************************/
+.signup {
+  margin: 10px;
+}
+
+.signup legend{
+  color: #fff;
+}
+
+.signup input{
+  color: #333;
+}
