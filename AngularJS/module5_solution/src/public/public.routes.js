@@ -44,6 +44,18 @@ function routeConfig ($stateProvider) {
     .state('public.signup', {
       url: '/signup',
       templateUrl: 'src/public/signup/signup.html',
+      controller: 'SignUpController'.
+      controllerAs: 'signUpCtrl',
+      resolve: {
+        menuItemExists: ['$stateParams','MenuService', function ($stateParams, MenuService) {
+          return MenuService.getFavoriteMenuItem($stateParams.favorite);
+        }]
+      }
+    })
+    .state('public.myinfo', {
+      url: '/myinfo',
+      templateUrl: 'src/public/myinfo/myinfo.html',
+      }
     });
 }
 })();

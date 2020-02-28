@@ -27,6 +27,25 @@ function MenuService($http, ApiPath) {
     });
   };
 
+  service.getFavoriteMenuItem = function (favorite) {
+    var config = {};
+    if (favorite) {
+      config.params = {'short-name': favorite};
+    }
+
+    var answer = $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+      return response.data;
+    });
+
+    if (answer.data) {
+      return true;
+    }
+    else {
+      return false;
+    };
+    
+  };
+
 }
 
 
