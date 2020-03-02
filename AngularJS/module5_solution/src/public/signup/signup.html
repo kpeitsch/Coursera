@@ -40,9 +40,8 @@
       <input type="text" name="favorite" placeholder="favorite dish (eg. A1)"
         ng-model="signUpCtrl.user.favorite"
         required>
-        <br>
-        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
-          No such menu number exists.
+        <span ng-if="regForm.favorite.$touched">
+          Favorite dish must be given.
         </span>
 <!-- ng-disabled="regForm.$invalid" -->
     <button
