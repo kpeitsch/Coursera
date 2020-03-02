@@ -4,10 +4,15 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['menuItemExists'];
-function SignUpController(menuItemExists) {
+SignUpController.$inject = ['MyInfoService'];
+function SignUpController(MyInfoService) {
   var $ctrl = this;
-  $ctrl.menuItemExists = menuItemExists;
+  var user = MyInfoService.getUser();
+
+  $ctrl.clickButton = function() {
+    MyInfoService.setUser($ctrl.user);
+    console.log("info user: " + user);
+  };
 }
 
 })();

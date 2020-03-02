@@ -1,2 +1,17 @@
-<span> Not Signed Up Yet. </span>
-<a ui-sref="public.signup">Sign up Now! </a>
+<div class="container">
+  <div ng-if="myinfoCtrl.user === undefined">
+    <span> Not Signed Up Yet. </span>
+    <a ui-sref="public.signup">Sign up Now! </a>
+  </div>
+
+  <div ng-if="myinfoCtrl.user !== undefined">
+      Firstname: {{myinfoCtrl.user.firstname}} <br>
+      Lastname: {{myinfoCtrl.user.lastname}} <br>
+      Email: {{myinfoCtrl.user.email}} <br>
+      Phone: {{myinfoCtrl.user.phone}} <br>
+      Favorite dish: <br>
+
+      <menu-item menu-item="myinfoCtrl.user.item">
+      </menu-item>
+  </div>
+</div>
